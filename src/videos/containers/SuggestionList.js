@@ -3,25 +3,30 @@ import {
     FlatList,
     Text
 } from 'react-native';
+import Layout from '../components/SuggestionListLayout';
 
 class SuggestionList extends Component {
     render(){
         const list = [
             {
-                title: 'diego',
+                title: 'Titulo1',
                 key: '1'
             },
             {
-                title: 'alejandro',
+                title: 'Titulo2',
                 key: '2'
             }
         ];
 
         return( 
-            <FlatList 
-                data={list}
-                renderItem={({ item }) => <Text>{item.title}</Text>}
-            />  
+            <Layout
+                title="Recomenando para ti"
+            >
+                <FlatList 
+                    data={list}
+                    renderItem={({ item }) => <Text>{item.title}</Text>}
+                />  
+            </Layout>
         )
     }
 }
