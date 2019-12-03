@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import {
   Text,
 } from 'react-native';
-import Home from './src/screens/containers/Home';
 
-export default class App extends Component {
+import Home from './src/screens/containers/Home';
+import Header from './src/sections/components/Header';
+
+export default class App extends Component{
   render() {
     return (
       <Home>
-        <Text>header</Text>
+        <Header />
         <Text>buscador</Text>
         <Text>categorías</Text>
         <Text>sugerencias</Text>
@@ -16,4 +18,3 @@ export default class App extends Component {
     );
   }
 }
-
