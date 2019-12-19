@@ -10,14 +10,14 @@ import API from './utils/api';
 
 export default class App extends Component {
   async componentDidMount() {
-    const movies = await API.getSuggestion(10);
-    console.log(movies);
+    // const movies = await API.getSuggestion(10);
+    // console.log(movies);
   }
   render() {
     return (
       <Home>
         <Header />
-        <Text>buscador</Text>
+        <Text>buscadores</Text>
         <Text>categorías</Text>
         <SuggestionList />
       </Home>

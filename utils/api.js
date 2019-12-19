@@ -2,15 +2,16 @@ const BASE_API = 'https://yts.lt/api/v2/';
 
 class Api {
   async getSuggestion(id) {
-    try {
-        const query = await fetch(`${BASE_API}movie_suggestions.json?movie_id=${id}`);
-        const { data } = await query.json();
-        return data.movies
-        
-    }catch(error) {
-        console.log(`error: ${error}`)
-    }
+  try {
+    let response = await fetch(
+      'https://facebook.github.io/react-native/movies.json',
+    );
+    let responseJson = await response.json();
+    return responseJson.movies;
+  } catch (error) {
+    console.error(error);
   }
+}
 }
 
 export default new Api();
