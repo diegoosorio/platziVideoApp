@@ -18,7 +18,7 @@ export default class App extends Component {
   async componentDidMount() {
     const movies = await API.getSuggestion(10);
     const categories = await API.getMovies();
-    console.log(categories);
+    // console.log(categories);
     // eslint-disable-next-line react/no-did-mount-set-state
     this.setState({
       suggestionList: movies,
