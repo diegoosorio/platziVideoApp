@@ -10,14 +10,7 @@ import Player from './src/player/containers/Player';
 import {Provider} from 'react-redux';
 import store from './store';
 
-// type Props = {};
-
 export default class App extends Component {
-  state = {
-    // suggestionList: [],
-    // categoryList: [],
-  };
-
   async componentDidMount() {
     const categoryList = await API.getMovies();
     store.dispatch({
