@@ -8,7 +8,8 @@ import API from './utils/api';
 import CategoryList from './src/videos/containers/CategoryList';
 import Player from './src/player/containers/Player';
 import {Provider} from 'react-redux';
-import store from './store';
+import {store, persistor} from './store';
+import {PersistGate} from 'redux-persist/integration/react';
 
 export default class App extends Component {
   async componentDidMount() {
@@ -30,13 +31,15 @@ export default class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Home>
-          <Header />
-          <Player />
-          <Text>buscador</Text>
-          <CategoryList />
-          <SuggestionList />
-        </Home>
+        <PersistGate loading={<Text>cargando ...</Text>} persistor={persistor}>
+          <Home>
+            <Header />
+            <Player />
+            <Text>buscador</Text>
+            <CategoryList />
+            <SuggestionList />
+          </Home>
+        </PersistGate>
       </Provider>
     );
   }
