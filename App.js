@@ -10,6 +10,7 @@ import Player from './src/player/containers/Player';
 import {Provider} from 'react-redux';
 import {store, persistor} from './store';
 import {PersistGate} from 'redux-persist/integration/react';
+import Loading from './src/sections/components/Loading';
 
 export default class App extends Component {
   async componentDidMount() {
@@ -31,7 +32,7 @@ export default class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <PersistGate loading={<Text>cargando ...</Text>} persistor={persistor}>
+        <PersistGate loading={<Loading />} persistor={persistor}>
           <Home>
             <Header />
             <Player />
